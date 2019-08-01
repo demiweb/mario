@@ -1,0 +1,32 @@
+{%set
+partners = {
+  slider: [
+    { img: '1.png' },
+    { img: '2.png' },
+    { img: '3.png' },
+    { img: '4.png' },
+    { img: '5.png' },
+    { img: '6png' },
+    { img: '7png' }
+  ]
+}
+%}
+
+<!-- begin partners -->
+<section class="partners">
+  <!-- begin slider -->
+  <div class="slider__wrap">
+    <div class="slider js-slider">
+      {% for i in parnters.slider %}
+      <!-- begin slide -->
+      <div class="slide">
+        {# <img data-src="img/logos/{{ i.img }}" alt="" class="js-lazy"> #}
+        <div class="partner-img js-lazy" data-background-image="img/logos/{{ i.img }}"></div>
+      </div>
+      <!-- end slide -->
+      {% endfor %}
+    </div>
+  </div>
+  <!-- end slider -->
+</section>
+<!-- end partners -->

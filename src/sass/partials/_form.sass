@@ -1,0 +1,37 @@
+.form
+  background-color: $white
+  border-right: $radius  
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.08)
+  &__inner
+    padding-top: 35px
+    padding-left: 60px
+    padding-right: 60px
+    padding-bottom: 25px
+  &__field
+    +notlast
+      margin-bottom: 20px
+  &__footer
+    color: $gray
+    border-top: 1px solid  $gray-light
+    padding-left: 60px
+    padding-right: 60px
+    padding-top: 30px
+    padding-bottom: 30px
+    text-align: center
+    a
+      color: $accent
+      text-decoration: underline
+
+.input
+  font-size: 18px
+  input
+    padding: 5px 10px
+    border: 1px solid  $gray-light
+    +tr(border-color .3s)
+    &:focus
+      border-color: $accent
+  &--transp
+    input
+      border-color: transparent
+  &--lg
+    font-size: 36px
