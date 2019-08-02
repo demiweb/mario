@@ -1,0 +1,143 @@
+.cabinet
+  margin-top: -$header-height
+  padding-top: $header-height
+  margin-bottom: -$footer-height
+  padding-bottom: $footer-height
+  position: relative
+  background-color: #eaeaf6
+  min-height: 100vh
+  +before
+    position: absolute
+    z-index: 0
+    top: 0
+    left: 0
+    right: 0
+    height: 345px
+    border-bottom-left-radius: $radius
+    border-bottom-right-radius: $radius
+    background-color: $blue
+    +lg
+      height: 300px
+  +lg
+    margin-top: -$header-height-lg
+    padding-top: $header-height-lg
+  +sm
+    margin-top: -$header-height-sm
+    padding-top: $header-height-sm
+  &__inner
+    position: relative
+    z-index: 1
+    margin-left: 198px
+    max-width: 1360px
+    padding-left: 15px
+    padding-right: 15px
+    +lg
+      margin-left: auto
+      margin-right: auto
+  &__top
+    color: $white
+    +flex(space-between, center, row)
+    margin-bottom: 20px
+    +sm
+      display: block
+  &__img
+    width: 108px
+    height: 108px
+    flex: 0 0 108px
+    border-radius: 50%
+    background-color: $white
+    +cover
+    background-size: auto
+    +md
+      width: 90px
+      height: 90px
+      flex: 0 0 90px
+    +sm
+      width: 60px
+      height: 60px
+      display: inline-block
+      vertical-align: middle
+  &__title
+    flex-grow: 1
+    text-transform: uppercase
+    padding-left: 30px
+    padding-right: 30px
+    +bold
+    +css-lock(16, 24, 320, 1199, font-size)
+    +xl
+      padding-left: 15px
+      padding-right: 15px
+    +sm
+      padding-right: 0
+      display: inline-block
+      vertical-align: middle
+      width: calc(100% - 65px)
+  &__btn
+    +sm
+      margin-top: 15px
+  &__blocks
+    +flex(flex-start, normal, row, wrap)
+    margin-left: -15px
+    margin-right: -15px
+  &__block
+    width: 100%
+    margin-bottom: 30px
+    padding-left: 15px
+    padding-right: 15px
+  &__block-2-3
+    width: percentage(2/3)
+    +md
+      width: 100%
+  &__block-1-3
+    width: percentage(1/3)
+    +md
+      width: 100%
+
+.cabinet-block
+  background-color: $white
+  border-radius: $radius
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.08)
+  padding: 30px 40px
+  +lg
+    padding: 30px
+  +md
+    padding: 25px
+  +sm
+    padding: 15px
+    border-radius: $radius-sm
+  &__title
+    color: $gray
+    +bold
+    font-size: 18px
+    +sm
+      font-size: 16px
+
+.cabinet-table
+  color: $gray-dark
+  table
+    th
+      font-weight: 400
+      +bold
+      font-size: 18px
+      color: $gray
+      text-align: left
+      &:nth-shild(1)
+        width: 70%
+      &:nth-shild(2)
+        width: 30%
+      +sm
+        font-size: 16px
+    tr
+      +notlast
+        border-bottom: 1px solid  $gray-light
+      &:last-child
+        td
+          padding-bottom: 0
+    td, th
+      padding: 20px 10px
+      +lg
+        padding: 15px 10px
+      +md
+        padding: 10px
+      +sm
+        padding: 5px 10px

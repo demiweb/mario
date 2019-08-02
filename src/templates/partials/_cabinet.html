@@ -1,0 +1,134 @@
+{%set
+table = [
+  {
+    cols: [
+      { text: 'Водяной полотенцесушитель Премиум Классик 800x540/500' },
+      { text: '<span class="green">+130</span>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Водяной полотенцесушитель Премиум Классик 800x540/500' },
+      { text: '<span class="green">+130</span>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Водяной полотенцесушитель Премиум Классик 800x540/500' },
+      { text: '<span class="green">+130</span>' }
+    ]
+  },
+  {
+    cols: [
+      { text: 'Водяной полотенцесушитель Премиум Классик 800x540/500' },
+      { text: '<span class="green">+130</span>' }
+    ]
+  }
+]
+%}
+
+<!-- begin cabinet -->
+<section class="cabinet">
+  <div class="cabinet__inner">
+    <div class="cabinet__top">
+      <div class="cabinet__img js-lazy" data-background-image="img/photo-camera.png"></div>
+
+      <div class="cabinet__title">Доброго дня, сандюк олександра ігорівна!</div>
+
+      <div class="cabinet__btn">
+        {{ mixins.btn(
+          title = 'ВИЙТИ',
+          mod = 'btn--transp-white btn--sm btn--arrow'
+        ) }}
+      </div>
+    </div>
+
+    <div class="cabinet__blocks">
+      <div class="cabinet__block">
+        <!-- begin cabinet-block -->
+        <div class="cabinet-block">
+          <!-- begin form -->
+          <div class="form form--hor form--in">
+            <form>
+              <div class="form__inner">
+                {{ mixins.input(
+                  name = 'input',
+                  mod = 'input--md input--full',
+                  type = 'text',
+                  placeholder = 'Введіть код товару, наприклад :  JFCSTR88',
+                  value = '',
+                  fieldClass = ''
+                ) }}
+
+                {{ mixins.input(
+                  name = 'select',
+                  mod = 'select--md',
+                  type = 'default',
+                  value = '',
+                  fieldClass = 'js-select',
+                  options = [
+                    { value: 'placeholder', option: 'Оберіть назву товару' },
+                    { value: '1', option: 'назву товару' },
+                    { value: '2', option: 'назву товару' },
+                    { value: '3', option: 'назву товару' }
+                  ]
+                ) }}
+
+                {{ mixins.btn(
+                  title = 'відправити код',
+                  mod = 'btn--rect',
+                  href = false
+                ) }}
+              </div>
+            </form>
+          </div>
+          <!-- end form -->
+        </div>
+        <!-- end cabinet-block -->      
+      </div>
+
+      <div class="cabinet__block cabinet__block-2-3">
+        <!-- begin cabinet-block -->
+        <div class="cabinet-block">
+          <!-- begin cabinet-table -->
+          <div class="cabinet-table">
+            <table>
+              <tr>
+                <th>Зареєстровані товари:</th>
+                <th>Нараховані бали:</th>
+              </tr>
+
+              {% for i in table %}
+              <tr>
+                {% for j in i.cols %}
+                <td>{{ j.text | safe }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+          <!-- end cabinet-table -->
+        </div>
+        <!-- end cabinet-block -->
+        
+      </div>
+
+      <div class="cabinet__block cabinet__block-1-3">
+        <!-- begin cabinet-block -->
+        <div class="cabinet-block text-center">
+          <div class="cabinet-block__title">На вашому рахунку:</div>
+          <div class="number">980</div>
+          <div class="cabinet-block__btn">
+            {{ mixins.btn(
+              title = 'вивести бали',
+              mod = ''
+            ) }}
+          </div>
+        </div>
+        <!-- end cabinet-block -->
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end cabinet -->

@@ -1,8 +1,8 @@
 <!-- begin hero -->
-<section class="hero js-lazy" data-background-image="img/bg-hero.jpg">
+<section class="hero hero--form js-lazy" data-background-image="img/bg-hero.jpg">
   <div class="hero__content">
     <div class="hero__title">
-      <h1 class="h1">Программа лояльності saleswithmario</h1>
+      <h1 class="h1">Программа лояльності SALESWITHMARIO</h1>
     </div>
   </div>
 
@@ -11,22 +11,25 @@
     <div class="form">
       <form>
         <div class="form__inner">
-          <div class="form__field">
-            {{ mixins.input(
-              name = 'input',
-              mod = 'input--lg input--transp',
-              type = 'tel',
-              placeholder = '+38 (____) - ___ - __ - __',
-              value = '',
-              fieldClass = '',
-              label = { first: 'Для доступу в систему введіть свій логін:' }
-            ) }}
+          <div class="form__field form__field-flex">
+            <div class="form__label form__label-top">Для доступу в систему введіть свій логін:</div>
+              <div class="form__input">
+                {{ mixins.input(
+                  name = 'input',
+                  mod = 'input--lg input--transp',
+                  type = 'tel',
+                  placeholder = '+38 (____) - ___ - __ - __',
+                  value = '',
+                  fieldClass = 'js-mask',
+                  fieldAttributes = { 'data-mask': 'phone' }
+                ) }}
 
-            {{ mixins.btn(
-              title = 'УВІЙТИ',
-              mod = '',
-              href = false
-            ) }}
+                {{ mixins.btn(
+                  title = 'УВІЙТИ',
+                  mod = '',
+                  href = false
+                ) }}
+              </div>
           </div>         
         </div>
 

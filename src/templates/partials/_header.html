@@ -6,6 +6,26 @@
     </a>
   </div>
 
+  {% if header.cabinet %}
+  <div class="header__nav js-menu">
+    {{ mixins.list(
+      name = 'nav',
+      modifications = { wrap: '', item: '', link: '' },
+      list = [
+        { link: 'ваш кабінет', modLink: 'btn btn--transp-white btn--reg btn--sm' },
+        { link: 'Вивести бали' },
+        { link: 'зміна персональної інформаціїї' }
+      ]
+    ) }}
+  </div>
+  {% endif %}
+
   <div class="header__contacts">ГАРЯЧА ЛІНІЯ - <a href="tel:0800300525">0 800 300 525</a></div>
+
+  {% if header.cabinet %}
+  <div class="header__burger">
+    <a href="#" class="burger js-burger"><span></span></a>
+  </div>
+  {% endif %}
 </header>
 <!-- end header -->

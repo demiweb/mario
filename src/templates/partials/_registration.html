@@ -1,0 +1,83 @@
+{%set
+form = [
+  { label: 'Введіть номер телефону (ваш майбутній логін):', name: '', type: 'tel', fieldClass: 'js-mask', fieldAttributes: { 'data-mask': 'phone' } },
+  { label: 'Ваш E-mail:', name: '', type: 'email' },
+  { label: 'ПІБ:', name: '', type: 'text' },
+  { label: 'Місце роботи (назва компанії):', name: '', type: 'text' },
+  {
+    label: 'Оберіть вашу професію:',
+    radios: [
+      { label: 'Продавець <span class="quest">?</span>', fieldAttributes: { 'name': 'profession', 'checked': '' } },
+      { label: 'Монтажник <span class="quest">?</span>', fieldAttributes: { 'name': 'profession' } }
+    ]
+  },
+  { label: 'Введіть ваш майбутній пароль:', name: '', type: 'password' }
+]
+%}
+
+<!-- begin registration -->
+<main class="main main--full js-lazy" data-background-image="img/bg-reg.jpg">
+  <!-- begin registration -->
+  <section class="registration">
+    <div class="registration__inner">
+      <div class="registration__form">
+        <!-- begin form -->
+        <div class="form">
+          <form>
+            <div class="form__inner">
+              {% for i in form %}
+              <div class="form__field">
+                <div class="form__input">
+                  <div class="form__label">{{ i.label }}</div>
+                  
+                  {% if i.radios %}
+                  <div class="form__radios">
+                    {% for j in i.radios %}
+                      {{ mixins.input(
+                        name = 'radio',
+                        mod = '',
+                        type = 'radio',
+                        placeholder = '',
+                        value = '',
+                        fieldClass = j.fieldClass,
+                        fieldAttributes = j.fieldAttributes,
+                        label = { last: j.label, span: true }
+                      ) }}
+                    {% endfor %}
+                  </div>
+                  {% else %}
+                  {{ mixins.input(
+                    name = 'input',
+                    mod = '',
+                    type = i.type,
+                    placeholder = '',
+                    value = '',
+                    fieldClass = i.fieldClass,
+                    fieldAttributes = i.fieldAttributes
+                  ) }}
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+
+              <div class="form__btn">
+                {{ mixins.btn(
+                  title = 'реєстрація',
+                  mod = '',
+                  href = false
+                ) }}
+              </div>
+            </div>
+
+            <div class="form__footer">
+              Вже зареєстровані, але не пам’ятаете пароль?    <a href="#">Відновити пароль</a>
+            </div>
+          </form>
+        </div>
+        <!-- end form -->
+      </div>
+    </div>
+  </section>
+  <!-- end registration -->
+</main>
+<!-- end registration -->

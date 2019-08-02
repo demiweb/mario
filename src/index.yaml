@@ -2,3 +2,5 @@ ProjectTitle: mario
 
 PageList:
 - file: home.html
+- file: registrantion.html
+- file: cabinet.html

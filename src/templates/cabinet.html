@@ -1,13 +1,17 @@
 ---
-title: home
+title: cabinet
+footer: {
+  mod: 'footer--transp-inherit'
+}
+header: {
+  cabinet: true
+}
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
   {% include "partials/_header.html" %}
-  {% include "partials/_hero.html" %}
-  {% include "partials/_partners.html" %}
-  {% include "partials/_descr.html" %}
+  {% include "partials/_cabinet.html" %}
   {% include "partials/_footer.html" %}
 {% endblock %}
 

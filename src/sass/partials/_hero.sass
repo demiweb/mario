@@ -3,11 +3,25 @@
   margin-top: -$header-height
   +cover
   text-align: center
-  padding-top: 20%
+  padding-top: calc(#{$header-height} + 3%)
+  +lg
+    margin-top: -$header-height-lg
+    padding-top: calc(#{$header-height-lg} + 3%)
+  +sm
+    margin-top: -$header-height-sm
+    padding-top: calc(#{$header-height-sm} + 3%)
   &__form,
   &__content
-    max-width: 870px
+    max-width: 900px
+    padding-left: 15px
+    padding-right: 15px
     margin-left: auto
     margin-right: auto
   &__content
     margin-bottom: 15px
+  &__form
+    position: relative
+    top: 50px
+
+  &--form
+    margin-bottom: 50px

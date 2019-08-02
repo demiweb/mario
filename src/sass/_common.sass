@@ -6,6 +6,8 @@ body
   +reg
   color: $c-text
   +no-scroll
+  +sm
+    font-size: $fz-sm
 
 input, textarea
   font-family: inherit
@@ -20,12 +22,75 @@ input, textarea
   fill: currentColor
   font-size: inherit
 
+.logo
+  display: block
+  +sm
+    width: 60px
+
+.green
+  color: $green
+
+.text-center
+  text-align: center
+
 .btn
   text-transform: uppercase
   color: $white
   background-color: $accent
+  border: 2px solid  $accent
   display: inline-block
   min-width: 260px
-  padding: 12px 10px
+  padding: 11px 10px
+  text-align: center
   +bold
   border-radius: 25px
+  +tr(background-color .3s, color .3s, border-color .3s )
+  +hover
+    color: $accent
+    background-color: transparent
+
+  &--transp-white
+    background-color: transparent
+    color: $white
+    border-color: $white
+    +hover
+      color: $accent
+      background-color: $white
+  &--sm
+    font-size: $fz
+    min-width: 170px
+    padding: 14px 10px 12px
+  &--reg
+    +reg
+  &--arrow
+    position: relative
+    +inline-flex(space-between, center)
+    padding-left: 30px
+    padding-right: 30px
+    +after
+      +icon-arrow(12, 12, 1, currentColor, -135)
+      display: inline-block
+  &--rect
+    border-radius: 0
+
+.quest
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  border-radius: 50%
+  width: 12px
+  height: 12px
+  text-align: center
+  background-color: $gray-light
+  font-size: .5em
+  color: $white
+  position: relative
+  top: -.35em
+
+.number
+  color: $blue
+  +css-lock(48, 120, 320, 1199, font-size)
+  line-height: 1.2
+  +bold
+
+

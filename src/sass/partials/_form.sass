@@ -1,15 +1,39 @@
 .form
+  $this: &
   background-color: $white
-  border-right: $radius  
+  border-radius: $radius  
   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.08)
+  +sm
+    border-radius: $radius-sm
   &__inner
     padding-top: 35px
     padding-left: 60px
     padding-right: 60px
     padding-bottom: 25px
+    +lg
+      padding: 25px 40px 20px
+    +md
+      padding: 25px
+    +sm
+      padding: 15px
   &__field
     +notlast
       margin-bottom: 20px
+      +sm
+        margin-bottom: 10px
+  &__input
+    +flex(space-between, center, row, wrap)
+    +sm
+      display: block
+      > *:not(.form__label)
+        width: 100%
+        +notlast
+          margin-bottom: 15px
+  &__label
+    color: $gray
+    text-align: left
+  &__label-top
+    margin-bottom: 20px
   &__footer
     color: $gray
     border-top: 1px solid  $gray-light
@@ -18,20 +42,201 @@
     padding-top: 30px
     padding-bottom: 30px
     text-align: center
+    +lg
+      padding: 25px 40px
+    +md
+      padding: 25px
+    +sm
+      padding: 15px
     a
       color: $accent
       text-decoration: underline
+  &__btn
+    text-align: center
+  &__radios
+    width: 305px
+    +flex(space-between, center)
+    +sm
+      display: block
+
+  &--in
+    padding: 0
+    border-radius: 0
+    box-shadow: none
+    #{$this}__inner
+      padding: 0
+  &--hor
+    #{$this}__inner
+      +flex(center, normal, row, wrap)
+      margin-left: -8px
+      margin-right: -8px
+      +md
+        margin-left: 0
+        margin-right: 0
+      > *
+        flex-grow: 1
+        margin-left: 8px
+        margin-right: 8px
+        &:last-child
+          flex: 0 0 260px
+        +md
+          width: calc(50% - 16px)
+          flex: none
+          margin-bottom: 10px
+          &:last-child
+            flex: none
+        +sm
+          width: 100%
+          margin-left: 0
+          margin-right: 0
+          &:last-child
+            margin-left: 0
+            margin-right: 0
+
 
 .input
-  font-size: 18px
+  text-align: left
   input
+    font-size: 18px
+    height: 42px
     padding: 5px 10px
     border: 1px solid  $gray-light
     +tr(border-color .3s)
+    width: 305px
     &:focus
       border-color: $accent
+    +placeholder
+      color: $gray-light
+    +sm
+      width: 100%
+      font-size: $fz
+      height: 32px
   &--transp
     input
       border-color: transparent
+      height: auto
+      width: auto
+      padding: 0
+      &:focus
+        border-color: transparent
   &--lg
-    font-size: 36px
+    input
+      font-size: 36px
+      +css-lock(18, 36, 320, 1199, font-size)
+      +sm
+        font-size: 18px
+
+  &--md
+    input
+      height: 60px
+      padding: 10px 20px
+      +placeholder
+      +md
+        height: 50px
+        padding: 10px
+      +sm
+        height: 40px
+        padding: 5px 10px
+  &--full
+    input
+      width: 100%
+
+.radio
+  position: relative
+  font-size: 18px
+  padding-left: 1em
+  user-select: none
+  +sm
+    font-size: $fz
+  input[type="radio"]
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    &:checked + span
+      color: $accent
+      .quest
+        background-color: $accent
+      &::before
+        background-color: currentColor
+        border-color: currentColor
+  > span
+      &::before
+        content: ''
+        border: 1px solid $gray-light
+        width: .5em
+        height: .5em
+        top: .4em
+        left: 0
+        background-color: transparent
+        border-radius: 50%
+        position: absolute
+        display: block
+        +sm
+          top: .2em
+
+
+.custom-select
+  $this: &
+  position: relative
+  font-size: 18px
+  +sm
+    font-size: $fz
+  select
+    opacity: 0
+    visibility: hidden
+    position: absolute
+  &.has-placeholder
+    #{$this}__opener
+      color: $gray-light
+  &.is-open
+    #{$this}__panel
+      visibility: visible
+      opacity: 1
+  &__opener
+    border: 1px solid  $gray-light
+    height: 60px
+    padding: 17px 20px
+    padding-right: 40px
+    +text-overflow
+    cursor: pointer
+    +before
+      +icon-arrow(12, 12, 1, currentColor, -45)
+      position: absolute
+      right: 20px
+      top: 20px
+      pointer-events: none
+    +md
+      height: 50px
+      padding: 12px 10px
+      padding-right: 35px
+      +before
+        top: 15px
+    +sm
+      height: 40px
+      padding: 11px 10px
+      padding-right: 30px   
+      +before
+        top: 12px
+  &__panel
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 1
+    top: 100%
+    visibility: hidden
+    opacity: 0
+    background-color: $white
+    border: 1px solid  $gray-light
+  &__option
+    &[data-value="placeholder"]
+      display: none
+    padding: 10px 20px
+    cursor: pointer
+    +tr(color .3s)
+    +hover
+      color: $accent
+    +md
+      padding: 8px 10px
+    +sm
+      padding: 5px 10px
