@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>registrantion</title>
+    <title>change</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -19,18 +19,42 @@
             <img src="img/logo.png" alt="" class="js-lazy">
           </a>
         </div>
+        <div class="header__nav js-menu">
+          <!-- begin nav -->
+          <nav class="nav">
+            <ul>
+              <li><a href="#" class=" btn btn--transp-white btn--reg btn--sm">ваш кабінет</a></li>
+              <li><a href="#">Вивести бали</a></li>
+              <li><a href="#">зміна персональної інформаціїї</a></li>
+            </ul>
+          </nav>
+          <!-- end nav -->
+        </div>
         <div class="header__contacts">ГАРЯЧА ЛІНІЯ - <a href="tel:0800300525">0 800 300 525</a></div>
+        <div class="header__burger">
+          <a href="#" class="burger js-burger"><span></span></a>
+        </div>
       </header>
       <!-- end header -->
-      <!-- begin registration -->
-      <main class="main main--full js-lazy" data-background-image="img/bg-reg.jpg">
-        <!-- begin registration -->
-        <section class="registration">
-          <div class="registration__inner">
-            <div class="registration__form">
+      <!-- begin cabinet -->
+      <section class="cabinet">
+        <div class="cabinet__inner">
+          <div class="cabinet__top">
+            <div class="cabinet__img user-img js-lazy" data-background-image="img/photo-camera.png"></div>
+            <div class="cabinet__title">Доброго дня, сандюк олександра ігорівна!</div>
+            <div class="cabinet__btn">
+              <a href="#" class="btn btn--transp-white btn--sm btn--arrow">ВИЙТИ</a>
+            </div>
+          </div>
+          <div class="cabinet__blocks">
+            <div class="cabinet__block cabinet__block-center cabinet__block-form">
               <!-- begin form -->
               <div class="form">
                 <form>
+                  <div class="form__img user-img-change">
+                    <div class="user-img user-img--gray js-lazy" data-background-image="img/photo-camera.png"></div>
+                    <a href="#">Змінити фото</a>
+                  </div>
                   <div class="form__inner">
                     <div class="form__field">
                       <div class="form__input">
@@ -93,7 +117,17 @@
                     </div>
                     <div class="form__field">
                       <div class="form__input">
-                        <div class="form__label">Введіть ваш майбутній пароль:</div>
+                        <div class="form__label">Ваш новий пароль:</div>
+                        <!-- begin input -->
+                        <div class="input">
+                          <input type="password">
+                        </div>
+                        <!-- end input -->
+                      </div>
+                    </div>
+                    <div class="form__field">
+                      <div class="form__input">
+                        <div class="form__label">Введіть пароль ще раз:</div>
                         <!-- begin input -->
                         <div class="input">
                           <input type="password">
@@ -102,22 +136,19 @@
                       </div>
                     </div>
                     <div class="form__btn">
-                      <button class="btn">реєстрація</button>
+                      <button class="btn">Змінити</button>
                     </div>
-                  </div>
-                  <div class="form__footer"> Вже зареєстровані, але не пам’ятаете пароль? <a href="#">Відновити пароль</a>
                   </div>
                 </form>
               </div>
               <!-- end form -->
             </div>
           </div>
-        </section>
-        <!-- end registration -->
-      </main>
-      <!-- end registration -->
+        </div>
+      </section>
+      <!-- end cabinet -->
       <!-- begin footer -->
-      <footer class="footer footer--transp">
+      <footer class="footer footer--transp-inherit">
         <div class="footer__copy"> &copy; 2019 ТОВ “МАРІО” Усі права захищені </div>
       </footer>
       <!-- end footer -->
