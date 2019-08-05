@@ -58,6 +58,12 @@
     +flex(space-between, center)
     +sm
       display: block
+  &__img
+    padding-top: 35px
+    +lg
+      padding-top: 25px
+    +sm
+      padding-top: 15px
 
   &--in
     padding: 0
@@ -73,25 +79,19 @@
       +md
         margin-left: 0
         margin-right: 0
-      > *
-        flex-grow: 1
-        margin-left: 8px
-        margin-right: 8px
-        &:last-child
-          flex: 0 0 260px
-        +md
-          width: calc(50% - 16px)
-          flex: none
-          margin-bottom: 10px
-          &:last-child
-            flex: none
+      #{$this}__col
+        // width: 33.33333%
+        padding-left: 8px
+        padding-right: 8px
+        width: 37%
+        &:nth-child(3)
+          width: 26%
         +sm
           width: 100%
-          margin-left: 0
-          margin-right: 0
-          &:last-child
-            margin-left: 0
-            margin-right: 0
+          +notlast
+            margin-bottom: 10px
+          &:nth-child(3)
+            width: 100%
 
 
 .input
@@ -106,7 +106,7 @@
     &:focus
       border-color: $accent
     +placeholder
-      color: $gray-light
+      color: $gray-light-100
     +sm
       width: 100%
       font-size: $fz
@@ -187,7 +187,7 @@
     position: absolute
   &.has-placeholder
     #{$this}__opener
-      color: $gray-light
+      color: $gray-light-100
   &.is-open
     #{$this}__panel
       visibility: visible

@@ -4,3 +4,6 @@ PageList:
 - file: home.html
 - file: registrantion.html
 - file: cabinet.html
+- file: cabinet-withdrawal.html
+- file: change.html
+- file: popup-thanks.html

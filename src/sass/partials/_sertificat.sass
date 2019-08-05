@@ -1,0 +1,120 @@
+.sertificats
+  padding: 0
+  padding-bottom: 40px
+  +lg
+    padding:  0 0 30px
+  +md
+    padding: 0 0 25px
+  +sm
+    padding: 0 0 15px
+  &__top
+    border-bottom: 1px solid  $c-border
+    +flex(flex-start, center)
+    padding: 25px 90px
+    +lg
+      padding: 15px 60px
+    +md
+      padding: 10px 40px
+    +sm
+      padding: 10px 20px
+    +xs
+      padding: 10px
+  &__title
+    font-size: 18px
+    color: $gray-dark
+    +sm
+      font-size: $fz
+  &__logo
+    position: relative
+    padding-right: 35px
+    +md
+      padding-right: 15px
+    +before
+      position: absolute
+      width: 1px
+      background-color: $c-border
+      height: 45px
+      right: 0
+      top: 50%
+      transform: translate(0, -50%)
+  &__title
+    padding-left: 35px
+    +md
+      padding-left: 15px
+  &__inner
+    +flex(center, normal, row, wrap)
+    margin-left: -15px
+    margin-right: -15px
+    padding-left: 90px
+    padding-right: 90px
+    padding-top: 50px
+    padding-bottom: 10px
+    +lg
+      padding: 40px 60px 10px
+    +md
+      padding: 20px 40px 0px
+      margin-right: -5px
+      margin-left: -5px
+    +sm
+      padding: 10px 20px      
+    +xs
+      padding: 10px
+  &__btn
+    text-align: center
+
+.sertificat
+  background-color: $gray-lightest
+  border-radius: $radius-sm
+  position: relative
+  // height: 145px
+  +flex(center, center)
+  padding: 44px 0
+  height: 100%
+  border: 1px solid transparent
+  +tr(border-color .3s, box-shadow .3s)
+  +hover
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.19)
+    border-color: $accent
+  &.is-disabled
+    opacity: .4
+    pointer-events: none
+  &__wrap
+    width: 25%
+    padding-left: 15px
+    padding-right: 15px
+    margin-bottom: 30px
+    +lg
+      width: 33.33333%
+    +md
+      padding-left: 5px
+      padding-right: 5px
+      margin-bottom: 10px
+    +sm
+      width: 50%
+    +xs
+      width: 100%
+  &__label
+    background-color: $accent
+    display: block
+    font-size: 9px
+    +bold
+    color: $white
+    padding: 7px 10px 6px
+    border-top-right-radius: $radius-sm
+    border-top-left-radius: $radius-sm
+    border-bottom-right-radius: $radius-sm
+    text-align: center
+    text-transform: uppercase
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    max-width: 72%
+  &__logo
+    position: absolute
+    display: block
+    z-index: 1
+    top: 10px
+    right: 10px
+  &__title
+    display: block

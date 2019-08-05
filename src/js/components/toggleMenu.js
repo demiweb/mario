@@ -1,38 +1,47 @@
-import { $DOC, $BODY, IS_ACTIVE, NO_SCROLL } from '../constants';
+import { IS_ACTIVE } from '../constants';
 
 class Burger {
   init() {
-    $DOC.on('click', `.${Burger.classNames.burger}`, this.toggle.bind(this));
+    document.addEventListener('click', this.toggle.bind(this));
   };
 
   toggle(e) {
+    this.btn = e.target.closest(`.${Burger.classNames.burger}`);
+    if(!this.btn) return;
+
     e.preventDefault();
 
-    const name = e.currentTarget.getAttribute('data-menu-target');
-    const $target = name 
-      ? $(`.${Burger.classNames.menu}[data-menu="${name}"]`)
-      : $(`.${Burger.classNames.menu}`);
+    this.name = this.btn.getAttribute('data-menu-target');
+    this.menu = this.name 
+      ? document.querySelector(`.${Burger.classNames.menu}[data-menu="${this.name}"]`)
+      : document.querySelector(`.${Burger.classNames.menu}`);
 
-    $(e.currentTarget).toggleClass(IS_ACTIVE);
-    $target.toggleClass(IS_ACTIVE);
+    if(!this.menu) return;
+
+    this.btn.classList.toggle(IS_ACTIVE);
+    this.menu.classList.toggle(IS_ACTIVE);
 
     if (this.onToggle) {
-      this.onToggle($(e.currentTarget), $target);
+      this.onToggle(this.btn, this.menu);
     };
   };
 
   close() {
-    const $burgers = $(`.${Burger.classNames.burger}`);
-    const $targets = $(`.${Burger.classNames.menu}`);
+    this.btns = [].slice.call(document.querySelectorAll(`.${Burger.classNames.burger}`));
+    this.menus = [].slice.call(document.querySelectorAll(`.${Burger.classNames.menu}`));
 
-    if ($burgers.length > 0 && $targets.length > 0) {
-      $burgers.removeClass(IS_ACTIVE);
-      $targets.removeClass(IS_ACTIVE);
+    if (this.btns.length > 0 && this.menus.length > 0) {
+      this.btns.forEach(btn => {
+        btn.classList.remove(IS_ACTIVE);
+      });
+      this.menus.forEach(menu => {
+        menu.classList.remove(IS_ACTIVE);
+      });
       
       if (this.onClose) {
-        this.onClose($burgers, $targets);
+        this.onClose(this.btns, this.menus);
       };
-    };   
+    };  
   };
 };
 

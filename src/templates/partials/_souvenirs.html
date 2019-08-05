@@ -1,0 +1,28 @@
+<!-- begin souvenirs -->
+<div class="souvenirs">
+    <div class="souvenirs__inner">
+      {% for i in range(0, 4) %}
+      <!-- begin souvenir -->
+      <div class="souvenir__wrap">
+        <div class="souvenir">
+          <div class="souvenir__img js-lazy" data-background-image="img/souvenir.jpg"></div>
+
+          <div class="souvenir__content">
+            <div class="souvenir__title">Чашка «Mario»</div>
+
+            <div class="souvenir__price number number--sm">120<small>балів</small></div>
+
+            <div class="souvenir__btn">
+              {{ mixins.btn(
+                title = 'придбати',
+                mod = 'btn--full'
+              ) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end souvenir -->
+      {% endfor %}
+    </div>
+</div>
+<!-- end souvenirs -->

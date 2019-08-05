@@ -31,7 +31,7 @@ table = [
 <section class="cabinet">
   <div class="cabinet__inner">
     <div class="cabinet__top">
-      <div class="cabinet__img js-lazy" data-background-image="img/photo-camera.png"></div>
+      <div class="cabinet__img user-img js-lazy" data-background-image="img/photo-camera.png"></div>
 
       <div class="cabinet__title">Доброго дня, сандюк олександра ігорівна!</div>
 
@@ -51,34 +51,38 @@ table = [
           <div class="form form--hor form--in">
             <form>
               <div class="form__inner">
-                {{ mixins.input(
-                  name = 'input',
-                  mod = 'input--md input--full',
-                  type = 'text',
-                  placeholder = 'Введіть код товару, наприклад :  JFCSTR88',
-                  value = '',
-                  fieldClass = ''
-                ) }}
-
-                {{ mixins.input(
-                  name = 'select',
-                  mod = 'select--md',
-                  type = 'default',
-                  value = '',
-                  fieldClass = 'js-select',
-                  options = [
-                    { value: 'placeholder', option: 'Оберіть назву товару' },
-                    { value: '1', option: 'назву товару' },
-                    { value: '2', option: 'назву товару' },
-                    { value: '3', option: 'назву товару' }
-                  ]
-                ) }}
-
-                {{ mixins.btn(
-                  title = 'відправити код',
-                  mod = 'btn--rect',
-                  href = false
-                ) }}
+                <div class="form__col">
+                  {{ mixins.input(
+                    name = 'input',
+                    mod = 'input--md input--full',
+                    type = 'text',
+                    placeholder = 'Введіть код товару, наприклад :  JFCSTR88',
+                    value = '',
+                    fieldClass = ''
+                  ) }}
+                </div>
+                <div class="form__col">
+                  {{ mixins.input(
+                    name = 'select',
+                    mod = 'select--md',
+                    type = 'default',
+                    value = '',
+                    fieldClass = 'js-select',
+                    options = [
+                      { value: 'placeholder', option: 'Оберіть назву товару' },
+                      { value: '1', option: 'назву товару' },
+                      { value: '2', option: 'назву товару' },
+                      { value: '3', option: 'назву товару' }
+                    ]
+                  ) }}
+                </div>
+                <div class="form__col">
+                  {{ mixins.btn(
+                    title = 'відправити код',
+                    mod = 'btn--rect btn--lg btn--full',
+                    href = false
+                  ) }}
+                </div>
               </div>
             </form>
           </div>

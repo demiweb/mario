@@ -1,0 +1,90 @@
+{%set
+sertificats = [
+  { price: '30<small>грн</small>', mod: '' },
+  { price: '50<small>грн</small>', mod: '' },
+  { price: '100<small>грн</small>', mod: '' },
+  { price: '200<small>грн</small>', mod: '' },
+  { price: '500<small>грн</small>', mod: '' },
+  { price: '1000<small>грн</small>', mod: 'is-disabled' }
+]
+%}
+
+<!-- begin cabinet -->
+<section class="cabinet">
+  <div class="cabinet__inner">
+    <div class="cabinet__top">
+      <div class="cabinet__img user-img js-lazy" data-background-image="img/photo-camera.png"></div>
+
+      <div class="cabinet__title">Доброго дня, сандюк олександра ігорівна!</div>
+
+      <div class="cabinet__btn">
+        {{ mixins.btn(
+          title = 'ВИЙТИ',
+          mod = 'btn--transp-white btn--sm btn--arrow'
+        ) }}
+      </div>
+    </div>
+
+    <div class="cabinet__blocks">
+      <div class="cabinet__block cabinet__block-center">
+        <!-- begin cabinet-block -->
+        <div class="cabinet-block cabinet-block--hor">
+          <div class="cabinet-block__title">На вашому рахунку:</div>
+          <div class="number number--sm">980<small>балів</small></div>
+          <div class="cabinet-block__right-bottom blue">1 бал = 1 грн</div>
+        </div>
+        <!-- end cabinet-block -->      
+      </div>
+
+      {% for i in range(0, 5) %}
+      <div class="cabinet__block">
+        <!-- begin cabinet-block -->
+        <div class="cabinet-block sertificats">
+          <div class="sertificats__top">
+            <div class="sertificats__logo">
+              <img data-src="img/logos/Silpo.png" alt="" class="js-lazy">
+            </div>
+
+            <div class="sertificats__title">Ведуча мережа магазинів самообслуговування в Україні</div>
+          </div>
+
+          <div class="sertificats__inner">
+            {% for j in sertificats %}
+            <!-- begin sertificat -->
+            <div class="sertificat__wrap">
+              <a href="#" class="sertificat{% if j.mod %} {{ j.mod }}{% endif %}">
+                <span class="sertificat__label">Подарунковий сертифікат</span>
+
+                <span class="sertificat__logo">
+                  <img data-src="img/logos/Silpo-sm.png" alt="" class="js-lazy">
+                </span>
+
+                <span class="sertificat__title number number--sm">{{ j.price | safe }}</span>
+              </a>
+            </div>
+            <!-- end sertificat -->
+            {% endfor %}
+          </div>
+
+          <div class="sertificats__btn">
+            {{ mixins.btn(
+              title = 'вивести бали',
+              mod = ''
+            ) }}
+          </div>
+        </div>
+        <!-- end cabinet-block -->
+      </div>
+      {% endfor %}
+      
+    </div>
+
+    <div class="cabinet__souvenirs">
+      <div class="section-title">
+        <h4 class="h4 h4--ttu h4--gray">Оберіть свій сувенір від Mario:</h4>
+      </div>
+      {% include "partials/_souvenirs.html" %}
+    </div>
+  </div>
+</section>
+<!-- end cabinet -->

@@ -1,0 +1,15 @@
+<!-- begin popup -->
+<div class="popup{% if popup.thanks %} is-active{% endif %} js-popup" data-popup="thanks">
+  <div class="popup__inner">
+    <a href="#" class="popup__close js-popup-close"></a>
+
+    <div class="popup__icon">
+      {{ mixins.icon('check-mark') }}
+    </div>
+
+    <div class="popup__title">Дякуємо!</div>
+
+    <div class="popup__text text--gray">Ваша заявка прийнята! Наш менеджер зв’яжеться з вами у найближчий час</div>
+  </div>
+</div>
+<!-- end popup -->

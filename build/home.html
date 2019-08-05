@@ -30,116 +30,132 @@
           </div>
         </div>
         <div class="hero__form">
-          <!-- begin form -->
-          <div class="form">
-            <form>
-              <div class="form__inner">
-                <div class="form__field form__field-flex">
-                  <div class="form__label form__label-top">Для доступу в систему введіть свій логін:</div>
-                  <div class="form__input">
-                    <!-- begin input -->
-                    <div class="input input--lg input--transp">
-                      <input class="js-mask" type="tel" placeholder="+38 (____) - ___ - __ - __" data-mask="phone">
+          <!-- begin tabs -->
+          <div class="tabs js-tabs">
+            <div class="tabs__tabs">
+              <a href="#" class="tabs__tab js-tab is-active" data-target-tab="login">Вхід</a>
+              <a href="#" class="tabs__tab js-tab" data-target-tab="registration">Реєстрація</a>
+            </div>
+            <div class="tabs__content">
+              <div class="tabs__item js-tabs-item is-active" data-tab="login">
+                <!-- begin form -->
+                <div class="form">
+                  <form>
+                    <div class="form__inner">
+                      <div class="form__field form__field-flex">
+                        <div class="form__label form__label-top">Для доступу в систему введіть свій логін:</div>
+                        <div class="form__input">
+                          <!-- begin input -->
+                          <div class="input input--lg input--transp">
+                            <input class="js-mask" type="tel" placeholder="+38 (____) - ___ - __ - __" data-mask="phone">
+                          </div>
+                          <!-- end input -->
+                          <button class="btn">УВІЙТИ</button>
+                        </div>
+                      </div>
                     </div>
-                    <!-- end input -->
-                    <button class="btn">УВІЙТИ</button>
-                  </div>
+                    <div class="form__footer"> Ще незареєстровані? <a href="#">Реєстрація в системі</a>
+                    </div>
+                  </form>
                 </div>
+                <!-- end form -->
               </div>
-              <div class="form__footer"> Ще незареєстровані? <a href="#">Реєстрація в системі</a>
+              <div class="tabs__item js-tabs-item" data-tab="registration">
+                <!-- begin form -->
+                <div class="form">
+                  <form>
+                    <div class="form__inner">
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">Введіть номер телефону (ваш майбутній логін):</div>
+                          <!-- begin input -->
+                          <div class="input">
+                            <input class="js-mask" type="tel" data-mask="phone">
+                          </div>
+                          <!-- end input -->
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">Ваш E-mail:</div>
+                          <!-- begin input -->
+                          <div class="input">
+                            <input type="email">
+                          </div>
+                          <!-- end input -->
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">ПІБ:</div>
+                          <!-- begin input -->
+                          <div class="input">
+                            <input type="text">
+                          </div>
+                          <!-- end input -->
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">Місце роботи (назва компанії):</div>
+                          <!-- begin input -->
+                          <div class="input">
+                            <input type="text">
+                          </div>
+                          <!-- end input -->
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">Оберіть вашу професію:</div>
+                          <div class="form__radios">
+                            <!-- begin radio -->
+                            <label class="radio">
+                              <input type="radio" name="profession" checked="">
+                              <span>Продавець <span class="quest">?</span></span>
+                            </label>
+                            <!-- end radio -->
+                            <!-- begin radio -->
+                            <label class="radio">
+                              <input type="radio" name="profession">
+                              <span>Монтажник <span class="quest">?</span></span>
+                            </label>
+                            <!-- end radio -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form__input">
+                          <div class="form__label">Введіть ваш майбутній пароль:</div>
+                          <!-- begin input -->
+                          <div class="input">
+                            <input type="password">
+                          </div>
+                          <!-- end input -->
+                        </div>
+                      </div>
+                      <div class="form__btn">
+                        <button class="btn">реєстрація</button>
+                      </div>
+                    </div>
+                    <div class="form__footer"> Вже зареєстровані, але не пам’ятаете пароль? <a href="#">Відновити пароль</a>
+                    </div>
+                  </form>
+                </div>
+                <!-- end form -->
               </div>
-            </form>
+            </div>
           </div>
-          <!-- end form -->
+          <!-- end tabs -->
         </div>
       </section>
       <!-- end hero -->
-      <!-- begin partners -->
-      <section class="partners">
-        <!-- begin slider -->
-        <div class="slider__wrap">
-          <div class="slider js-slider" data-slider="partners">
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/1.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/2.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/3.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/4.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/5.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/6.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/7.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/1.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/2.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/3.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/4.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/5.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/6.png"></div>
-            </div>
-            <!-- end slide -->
-            <!-- begin slide -->
-            <div class="slide">
-              <div class="partner-img js-lazy" data-background-image="img/logos/7.png"></div>
-            </div>
-            <!-- end slide -->
-          </div>
-        </div>
-        <!-- end slider -->
-      </section>
-      <!-- end partners -->
       <!-- begin descr -->
       <section class="descr js-lazy" data-background-image="img/bg.jpg">
+        <div class="descr__title">
+          <h2 class="h2">Для кого наша программа?</h2>
+        </div>
         <div class="descr__inner">
-          <div class="descr__title">
-            <h2 class="h2">Для кого наша программа?</h2>
-          </div>
           <div class="descr__block">
             <!-- begin descr-block -->
             <div class="descr-block">
@@ -172,6 +188,24 @@
       <!-- end footer -->
     </div>
     <!-- END content -->
+    <!-- begin popups -->
+    <!-- begin popup -->
+    <div class="popup js-popup" data-popup="thanks">
+      <div class="popup__inner">
+        <a href="#" class="popup__close js-popup-close"></a>
+        <div class="popup__icon">
+          <!-- begin icon-check-mark -->
+          <svg height="1em" viewBox="0 0 512 512" width="1.000em" class="icon icon-check-mark">
+            <path d="M369.164 174.77c7.813 7.812 7.813 20.476 0 28.285L234.992 337.23c-7.812 7.81-20.472 7.81-28.285 0l-63.871-63.875c-7.813-7.808-7.813-20.472 0-28.28 7.809-7.813 20.473-7.813 28.281 0l49.73 49.73L340.88 174.77c7.812-7.81 20.476-7.81 28.285 0zM512 256c0 141.504-114.516 256-256 256C114.496 512 0 397.484 0 256 0 114.496 114.516 0 256 0c141.504 0 256 114.516 256 256zm-40 0c0-119.395-96.621-216-216-216-119.395 0-216 96.621-216 216 0 119.395 96.621 216 216 216 119.395 0 216-96.621 216-216zm0 0" />
+          </svg>
+          <!-- end icon-check-mark -->
+        </div>
+        <div class="popup__title">Дякуємо!</div>
+        <div class="popup__text text--gray">Ваша заявка прийнята! Наш менеджер зв’яжеться з вами у найближчий час</div>
+      </div>
+    </div>
+    <!-- end popup -->
+    <!-- end popups -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->

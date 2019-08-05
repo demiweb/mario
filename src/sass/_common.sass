@@ -17,10 +17,33 @@ input, textarea
     font-family: inherit
     font-size: inherit
 
+button
+  font-size: inherit
+  font-family: inherit
+
 .icon
   display: inline-block
   fill: currentColor
   font-size: inherit
+
+.container
+  margin-left: auto
+  margin-right: auto
+  padding-left: 15px
+  padding-right: 15px
+  max-width: 1360px
+
+.section-title
+  margin-bottom: 50px
+  text-align: center
+  +lg
+    margin-bottom: 30px
+  +md
+    margin-bottom: 20px
+  +sm
+    margin-bottom: 15px
+  +xs
+    margin-bottom: 10px
 
 .logo
   display: block
@@ -29,6 +52,8 @@ input, textarea
 
 .green
   color: $green
+.blue
+  color: $blue
 
 .text-center
   text-align: center
@@ -60,6 +85,15 @@ input, textarea
     font-size: $fz
     min-width: 170px
     padding: 14px 10px 12px
+  &--lg
+    padding-top: 21px
+    padding-bottom: 21px
+    +md
+      padding-top: 16px
+      padding-bottom: 16px
+    +sm
+      padding-top: 11px
+      padding-bottom: 11px
   &--reg
     +reg
   &--arrow
@@ -72,6 +106,9 @@ input, textarea
       display: inline-block
   &--rect
     border-radius: 0
+  &--full
+    width: 100%
+    min-width: 0
 
 .quest
   display: inline-flex
@@ -92,5 +129,9 @@ input, textarea
   +css-lock(48, 120, 320, 1199, font-size)
   line-height: 1.2
   +bold
+  &--sm
+    +css-lock(24, 48, 320, 1199, font-size)
+    small
+      font-size: .3em
 
 

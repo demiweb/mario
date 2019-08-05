@@ -1,17 +1,21 @@
 import { setTouch } from './components/setHTMLClassNames';
 import sayHello from './lib/sayHello';
 import setLazy from './components/setLazy';
-import setSliders from './components/setSliders';
+// import setSliders from './components/setSliders';
 import setInputMask from './components/setInputMask';
 import setSelects from './components/select/setSelects';
 import toggleMenu from './components/toggleMenu';
+import setTabs from './components/setTabs';
+import setPopups from './components/setPopups';
 
-$(function() {
+document.addEventListener('DOMContentLoaded', () => {
   sayHello();
   setTouch();
   setLazy();
-  setSliders();
+  // setSliders();
   setInputMask();
   setSelects();
   toggleMenu();
+  setTabs();
+  setPopups();
 });
