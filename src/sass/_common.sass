@@ -126,6 +126,33 @@ button
   color: $white
   position: relative
   top: -.35em
+  position: relative
+  +tr(background-color .3s)
+  &:hover
+    background-color: $accent
+    .tooltip
+      visibility: visible
+      opacity: 1
+
+.tooltip
+  visibility: hidden
+  opacity: 0
+  position: absolute
+  background-color: $c-text
+  z-index: 10
+  min-width: 200px
+  padding: 10px
+  border-radius: $radius-sm
+  left: 50%
+  transform: translate(-50%, 0)
+  bottom: calc(100% + 10px)
+  +tr(opacity .3s, visibility .3s)
+  +before
+    +arr(16,8, $c-text, b)
+    position: absolute
+    left: 50%
+    transform: translate(-50%, 0)
+    top: 100%
 
 .number
   color: $blue
