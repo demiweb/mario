@@ -1,11 +1,35 @@
 {%set
 sertificats = [
-  { price: '30<small>грн</small>', mod: '' },
-  { price: '50<small>грн</small>', mod: '' },
-  { price: '100<small>грн</small>', mod: '' },
-  { price: '200<small>грн</small>', mod: '' },
-  { price: '500<small>грн</small>', mod: '' },
-  { price: '1000<small>грн</small>', mod: 'is-disabled' }
+  {
+    items: [
+      { name: 'silpo-1-sertificat', id: 'silpo-1-30hrn', price: '30<small>грн</small>', mod: '' },
+      { name: 'silpo-1-sertificat', id: 'silpo-1-50hrn', price: '50<small>грн</small>', mod: '' },
+      { name: 'silpo-1-sertificat', id: 'silpo-1-100hrn', price: '100<small>грн</small>', mod: '' },
+      { name: 'silpo-1-sertificat', id: 'silpo-1-200hrn', price: '200<small>грн</small>', mod: '' },
+      { name: 'silpo-1-sertificat', id: 'silpo-1-500hrn', price: '500<small>грн</small>', mod: '' },
+      { name: 'silpo-1-sertificat', id: 'silpo-1-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
+    ]
+  },
+  {
+    items: [
+      { name: 'silpo-2-sertificat', id: 'silpo-2-30hrn', price: '30<small>грн</small>', mod: '' },
+      { name: 'silpo-2-sertificat', id: 'silpo-2-50hrn', price: '50<small>грн</small>', mod: '' },
+      { name: 'silpo-2-sertificat', id: 'silpo-2-100hrn', price: '100<small>грн</small>', mod: '' },
+      { name: 'silpo-2-sertificat', id: 'silpo-2-200hrn', price: '200<small>грн</small>', mod: '' },
+      { name: 'silpo-2-sertificat', id: 'silpo-2-500hrn', price: '500<small>грн</small>', mod: '' },
+      { name: 'silpo-2-sertificat', id: 'silpo-2-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
+    ]
+  },
+  {
+    items: [
+      { name: 'silpo-3-sertificat', id: 'silpo-3-30hrn', price: '30<small>грн</small>', mod: '' },
+      { name: 'silpo-3-sertificat', id: 'silpo-3-50hrn', price: '50<small>грн</small>', mod: '' },
+      { name: 'silpo-3-sertificat', id: 'silpo-3-100hrn', price: '100<small>грн</small>', mod: '' },
+      { name: 'silpo-3-sertificat', id: 'silpo-3-200hrn', price: '200<small>грн</small>', mod: '' },
+      { name: 'silpo-3-sertificat', id: 'silpo-3-500hrn', price: '500<small>грн</small>', mod: '' },
+      { name: 'silpo-3-sertificat', id: 'silpo-3-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
+    ]
+  }
 ]
 %}
 
@@ -36,42 +60,55 @@ sertificats = [
         <!-- end cabinet-block -->      
       </div>
 
-      {% for i in range(0, 5) %}
+      {% for i in sertificats %}
       <div class="cabinet__block">
         <!-- begin cabinet-block -->
         <div class="cabinet-block sertificats">
-          <div class="sertificats__top">
-            <div class="sertificats__logo">
-              <img data-src="img/logos/Silpo.png" alt="" class="js-lazy">
+          <form>
+            <div class="sertificats__top">
+              <div class="sertificats__logo">
+                <img data-src="img/logos/Silpo.png" alt="" class="js-lazy">
+              </div>
+
+              <div class="sertificats__title">Ведуча мережа магазинів самообслуговування в Україні</div>
             </div>
 
-            <div class="sertificats__title">Ведуча мережа магазинів самообслуговування в Україні</div>
-          </div>
+            <div class="sertificats__inner">
+              {% for j in i.items %}
+              <!-- begin sertificat -->
+              <div class="sertificat__wrap">
+                <label for="{{ j.id }}" class="sertificat{% if j.mod %} {{ j.mod }}{% endif %}">
+                  {{ mixins.input(
+                    name = 'radio',
+                    mod = 'radio--sertificat',
+                    type = 'radio',
+                    placeholder = '',
+                    value = '',
+                    fieldClass = '',
+                    fieldAttributes = { 'name': j.name, 'id': j.id },
+                    label = { last: ' ', span: true }
+                  ) }}
+                  <span class="sertificat__label">Подарунковий сертифікат</span>
 
-          <div class="sertificats__inner">
-            {% for j in sertificats %}
-            <!-- begin sertificat -->
-            <div class="sertificat__wrap">
-              <a href="#" class="sertificat{% if j.mod %} {{ j.mod }}{% endif %}">
-                <span class="sertificat__label">Подарунковий сертифікат</span>
+                  <span class="sertificat__logo">
+                    <img data-src="img/logos/Silpo-sm.png" alt="" class="js-lazy">
+                  </span>
 
-                <span class="sertificat__logo">
-                  <img data-src="img/logos/Silpo-sm.png" alt="" class="js-lazy">
-                </span>
-
-                <span class="sertificat__title number number--sm">{{ j.price | safe }}</span>
-              </a>
+                  <span class="sertificat__title number number--sm">{{ j.price | safe }}</span>
+                </label>
+              </div>
+              <!-- end sertificat -->
+              {% endfor %}
             </div>
-            <!-- end sertificat -->
-            {% endfor %}
-          </div>
 
-          <div class="sertificats__btn">
-            {{ mixins.btn(
-              title = 'вивести бали',
-              mod = ''
-            ) }}
-          </div>
+            <div class="sertificats__btn">
+              {{ mixins.btn(
+                title = 'вивести бали',
+                mod = '',
+                href = false
+              ) }}
+            </div>
+          </form>
         </div>
         <!-- end cabinet-block -->
       </div>
