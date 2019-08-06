@@ -38,16 +38,26 @@ form = [
             <form>
               <div class="form__inner">
                 <div class="form__field form__field-flex">
-                  <div class="form__label form__label-top">Для доступу в систему введіть свій логін:</div>
+                  <div class="form__label form__label-top">Для доступу в систему введіть свій логін і пароль:</div>
                     <div class="form__input">
                       {{ mixins.input(
                         name = 'input',
-                        mod = 'input--lg input--transp',
+                        mod = 'input--transp',
                         type = 'tel',
                         placeholder = '+38 (____) - ___ - __ - __',
                         value = '',
                         fieldClass = 'js-mask',
                         fieldAttributes = { 'data-mask': 'phone' }
+                      ) }}
+
+                      {{ mixins.input(
+                        name = 'input',
+                        mod = 'input--transp',
+                        type = 'password',
+                        placeholder = 'Пароль',
+                        value = '',
+                        fieldClass = '',
+                        fieldAttributes = { }
                       ) }}
 
                       {{ mixins.btn(
