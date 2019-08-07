@@ -1,39 +1,84 @@
-import slick from 'slick-carousel';
 import setlazy from './setLazy';
+import { tns } from 'tiny-slider/src/tiny-slider.js';
+import { debounce } from 'throttle-debounce';
 
 export default function setSliders() {
-  const $sliders = $('.js-slider');
+  const sliders = [].slice.call(document.querySelectorAll('.js-slider'));
 
+  if(!sliders.length) return;
 
-  if(!$sliders.length) return;
-
-  $sliders.each((i, slider) => {
+  sliders.forEach(slider => {
     const name = slider.dataset.slider;
+    const wrap = slider.parentNode.classList.contains('slider__wrap') ? slider.parentNode : null;
+    let prev, next;
+    if (wrap) {
+      prev = wrap.querySelector('.js-prev');
+      next = wrap.querySelector('.js-next');
+    };
     const options = {
-      partners: {
-        slidesToShow: 7,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        prevArrow: false,
-        nextArrow: false,
-        responsive: [
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 5
-            }
+      sertificats: {
+        container: slider,
+        onInit: setlazy,
+        items: 1,
+        mouseDrag: true,
+        prevButton: prev,
+        nextButton: next,
+        nav: false,
+        responsive: {
+          768: {
+            items: 3
           },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 3
-            }
+          992: {
+            items: 5
           }
-        ]
+        }
+      },
+      items: {
+        container: slider,
+        onInit: setlazy,
+        items: 1,
+        mouseDrag: true,
+        prevButton: prev,
+        nextButton: next,
+        nav: false,
+        gutter: 10,
+        responsive: {
+          480: {
+            items: 2
+          },
+          768: {
+            items: 4
+          },
+          992: {
+            gutter: 30
+          }
+        }
       }
     };
 
-    $(slider).on('init', setlazy);
-    $(slider).slick(options[name]);
+    let mySlider;    
+
+    function initSlider() {
+      if (name === 'sertificats') {
+        if (window.matchMedia('(min-width: 576px)').matches) {          
+
+          if (mySlider && mySlider.getInfo === null ) {
+            mySlider.rebuild();
+          } else {
+            mySlider = tns(options[name]);
+          };          
+        } else if(mySlider && mySlider.getInfo !== null) {
+          mySlider.destroy();
+        }
+      } else {
+        mySlider = tns(options[name]);
+      };
+    };
+
+    initSlider();
+
+    const initSliderDebounced = debounce(66, initSlider);
+
+    window.addEventListener('resize', initSliderDebounced);
   });
 };

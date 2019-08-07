@@ -1,6 +1,35 @@
 <!-- begin souvenirs -->
 <div class="souvenirs">
-    <div class="souvenirs__inner">
+  <div class="slider__wrap slider--items__wrap">
+    <div class="slider js-slider slider--items" data-slider="items">
+      {% for i in range(0, 10) %}
+      <div class="slide">
+        <div class="souvenir">
+          <div class="souvenir__img js-lazy" data-background-image="img/souvenir.jpg"></div>
+
+          <div class="souvenir__content">
+            <div class="souvenir__title">Чашка «Mario»</div>
+
+            <div class="souvenir__price number number--sm">120<small>балів</small></div>
+
+            <div class="souvenir__btn">
+              {{ mixins.btn(
+                title = 'придбати',
+                mod = 'btn--full'
+              ) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <button class="slider__prev js-prev"></button>
+    <button class="slider__next js-next"></button>
+  </div>
+
+
+    {# <div class="souvenirs__inner">
       {% for i in range(0, 4) %}
       <!-- begin souvenir -->
       <div class="souvenir__wrap">
@@ -23,6 +52,6 @@
       </div>
       <!-- end souvenir -->
       {% endfor %}
-    </div>
+    </div> #}
 </div>
 <!-- end souvenirs -->

@@ -1,37 +1,4 @@
-{%set
-sertificats = [
-  {
-    items: [
-      { name: 'silpo-1-sertificat', id: 'silpo-1-30hrn', price: '30<small>грн</small>', mod: '' },
-      { name: 'silpo-1-sertificat', id: 'silpo-1-50hrn', price: '50<small>грн</small>', mod: '' },
-      { name: 'silpo-1-sertificat', id: 'silpo-1-100hrn', price: '100<small>грн</small>', mod: '' },
-      { name: 'silpo-1-sertificat', id: 'silpo-1-200hrn', price: '200<small>грн</small>', mod: '' },
-      { name: 'silpo-1-sertificat', id: 'silpo-1-500hrn', price: '500<small>грн</small>', mod: '' },
-      { name: 'silpo-1-sertificat', id: 'silpo-1-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
-    ]
-  },
-  {
-    items: [
-      { name: 'silpo-2-sertificat', id: 'silpo-2-30hrn', price: '30<small>грн</small>', mod: '' },
-      { name: 'silpo-2-sertificat', id: 'silpo-2-50hrn', price: '50<small>грн</small>', mod: '' },
-      { name: 'silpo-2-sertificat', id: 'silpo-2-100hrn', price: '100<small>грн</small>', mod: '' },
-      { name: 'silpo-2-sertificat', id: 'silpo-2-200hrn', price: '200<small>грн</small>', mod: '' },
-      { name: 'silpo-2-sertificat', id: 'silpo-2-500hrn', price: '500<small>грн</small>', mod: '' },
-      { name: 'silpo-2-sertificat', id: 'silpo-2-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
-    ]
-  },
-  {
-    items: [
-      { name: 'silpo-3-sertificat', id: 'silpo-3-30hrn', price: '30<small>грн</small>', mod: '' },
-      { name: 'silpo-3-sertificat', id: 'silpo-3-50hrn', price: '50<small>грн</small>', mod: '' },
-      { name: 'silpo-3-sertificat', id: 'silpo-3-100hrn', price: '100<small>грн</small>', mod: '' },
-      { name: 'silpo-3-sertificat', id: 'silpo-3-200hrn', price: '200<small>грн</small>', mod: '' },
-      { name: 'silpo-3-sertificat', id: 'silpo-3-500hrn', price: '500<small>грн</small>', mod: '' },
-      { name: 'silpo-3-sertificat', id: 'silpo-3-1000hrn', price: '1000<small>грн</small>', mod: 'is-disabled' }
-    ]
-  }
-]
-%}
+{% import "../data/_sertificats.html" as sertificats %}
 
 <!-- begin cabinet -->
 <section class="cabinet">
@@ -60,8 +27,28 @@ sertificats = [
         <!-- end cabinet-block -->      
       </div>
 
-      {% for i in sertificats %}
-      <div class="cabinet__block">
+      <div class="cabinet__blocks-slider">
+        <!-- begin slider -->
+        <div class="sertificats-nav__wrap slider__wrap slider--sertificats__wrap">
+          <div class="sertificats-nav slider slider--sertificats js-slider js-toggle-content" data-slider="sertificats">
+            {% for i in sertificats.slider %}
+            {# <a href="#" class="slide js-lazy js-scroll-to" data-background-image="img/logos/{{ i.img }}"> #}
+            <a href="#" data-scroll-to="{{ i.href }}" class="sertificats-nav__link slide js-scroll-to">
+              <img data-src="img/logos/{{ i.img }}" alt="" class="js-lazy">
+            </a>
+            {% endfor %}
+          </div>
+          
+          <button class="sertificats-nav__btn js-toggle-btn">обрати магазин</button>
+
+          <button class="slider__prev js-prev"></button>
+          <button class="slider__next js-next"></button>
+        </div>
+        <!-- end slider -->
+      </div>
+
+      {% for i in sertificats.sertificats %}
+      <div class="cabinet__block js-scroll-to-target" data-scroll-to-target="{{ i.id }}">
         <!-- begin cabinet-block -->
         <div class="cabinet-block sertificats">
           <form>

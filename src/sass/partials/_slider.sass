@@ -1,0 +1,46 @@
+.slider
+  &__wrap
+    position: relative
+  &__prev,
+  &__next
+    +inline-flex(center, center)
+    background-color: $gray-light-100
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%)
+    color: $white
+    width: 35px
+    height: 35px
+    border-radius: 50%
+  &__prev
+    left: 0
+    +before
+      +icon-arrow(10, 10, 1, currentColor, 45)
+      position: relative
+      display: block
+      left: .1em
+  &__next
+    right: 0
+    +before
+      +icon-arrow(10, 10, 1, currentColor, -135)
+      position: relative
+      display: block
+      right: .1em
+      
+
+  &--sertificats
+    .slide
+      display: inline-block
+      text-align: center
+      vertical-align: middle !important
+    &__wrap
+      .slider
+        &__prev,
+        &__next
+          +xs
+            display: none
+  &--items
+    &__wrap
+      // padding: 10px
+      .tns-ovh
+        padding: 25px 0

@@ -138,3 +138,46 @@
     right: 10px
   &__title
     display: block
+
+.sertificats-nav
+  +xs
+    order: 1
+    font-size: 0
+    max-height: 0
+    overflow: hidden
+    &.is-active
+      max-height: none
+      overflow: visible
+  &__btn
+    display: none
+    margin-bottom: 15px
+    +bold
+    text-transform: uppercase
+    text-align: center
+    background-color: transparent
+    color: $accent
+    position: relative
+    order: 0
+    +after
+      +icon-arrow(8, 8, 1, currentColor, -45)
+      display: inline-block
+      margin-left: 5px
+      position: relative
+      top: -.15em
+    +xs
+      display: block
+    &.is-active
+      +after
+        +rotate(135)
+        top: .15em
+  &__link
+    +xs
+      width: 33.33333%
+      vertical-align: top
+      margin-bottom: 20px
+      img
+        max-width: 70%
+  &__wrap
+    +xs
+      +flex(flex-start, center, column)
+
