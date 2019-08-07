@@ -150,23 +150,24 @@
       overflow: visible
   &__btn
     display: none
-    margin-bottom: 15px
-    +bold
-    text-transform: uppercase
-    text-align: center
-    background-color: transparent
-    color: $accent
+    
+    // +bold
+    // text-transform: uppercase
+    // text-align: center
+    // background-color: transparent
+    // color: $accent
     position: relative
     order: 0
     +after
-      +icon-arrow(8, 8, 1, currentColor, -45)
+      +icon-arrow(8, 8, 2, currentColor, -45)
       display: inline-block
-      margin-left: 5px
+      margin-left: 10px
       position: relative
       top: -.15em
     +xs
       display: block
     &.is-active
+      margin-bottom: 15px
       +after
         +rotate(135)
         top: .15em
