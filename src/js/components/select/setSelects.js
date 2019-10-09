@@ -1,5 +1,6 @@
 import Select from 'select-custom';
 import addSelectsPlaceholder from './addPlaceholder';
+import filterSearch from './filterSearch';
  
 class CustomSelect {
   constructor(select) {
@@ -7,7 +8,10 @@ class CustomSelect {
     this.name = select.dataset.type;
     // ================ plugin options ======================
     this.parameters = {
-      default: {}
+      panelItem: {
+        position: 'top',
+        item: '<input type="text" class="js-search" placeholder="" />'
+      }
     };
     // ================ plugin options ======================
   }
@@ -22,16 +26,23 @@ class CustomSelect {
   get panel() {
     return this.wrap.querySelector('.custom-select__panel');
   }
+  get input() {
+    return this.wrap.querySelector('.js-search');
+  }
+  get options() {
+    return [].slice.call(this.wrap.querySelectorAll('.custom-select__option'));
+  }
   // ================ select elements ======================
 
   init() {
     // ================ plugin initialization ======================
-    this.Select = new Select(this.select, this.parameters[this.name]);
+    this.Select = new Select(this.select, this.parameters);
     this.Select.init();
     // ================ plugin initialization ======================
 
     // ================ helpers ======================
     addSelectsPlaceholder.call(this);
+    filterSearch.call(this);
     // ================ helpers ======================
   }
 }

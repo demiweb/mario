@@ -5,16 +5,19 @@ export default function setInputMask() {
 
   if(!maskedInputs.length) return;
 
-  const options = {
-    phone: {
-      mask: '+{38}(000)000-00-00',
-      lazy: false
-    }
-  };
+  
 
   maskedInputs.forEach(input => {
     const type = input.dataset.mask;
+    const mask = '{38}000 000-00-00';
 
-    const mask = IMask(input, options[type]);
+    const options = {
+      phone: {
+        mask: mask,
+        lazy: false
+      }
+    };
+
+    const myMask = IMask(input, options[type]);
   });
 };

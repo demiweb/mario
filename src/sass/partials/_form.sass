@@ -194,6 +194,11 @@
     #{$this}__panel
       visibility: visible
       opacity: 1
+  &.is-searching
+    #{$this}__panel
+      +before
+        +coverdiv
+        background-color: rgba($white, .7)
   &__opener
     border: 1px solid  $gray-light
     height: 60px
@@ -230,6 +235,30 @@
     opacity: 0
     background-color: $white
     border: 1px solid  $gray-light
+    max-height: 300px
+    overflow: auto
+  &__panel-item
+    // padding-left: 10px
+    // padding-right: 10px
+    input
+      font-size: 18px
+      height: 42px
+      padding: 5px 10px
+      border: 1px solid  $gray-light
+      width: 100%
+      +tr(border-color .3s)
+      &:focus
+        border-color: $accent
+      +placeholder
+        color: $gray-light-100
+      +sm
+        width: 100%
+        font-size: $fz
+        height: 32px
+
+  &__options
+    max-height: 250px
+    overflow: auto
   &__option
     &[data-value="placeholder"]
       display: none
@@ -242,3 +271,5 @@
       padding: 8px 10px
     +sm
       padding: 5px 10px
+    &.is-hidden
+      display: none
