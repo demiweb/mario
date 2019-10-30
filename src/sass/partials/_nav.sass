@@ -1,13 +1,20 @@
 .nav
   text-transform: uppercase
+  ul:first-child
+    padding-right: 100px
+    +lg
+      padding-right: 0
   li
     display: inline-block
     +notlast
-    margin-right: 35px
-    +lg
-      margin-right: 0
+      margin-right: 35px
+      +lg
+        margin-right: 0
+        
     +lg
       display: block
-      margin-bottom: 15px
+      border-bottom: 1px solid  #747474
+      padding-top: 10px
+      padding-bottom: 10px
 
 

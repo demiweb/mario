@@ -26,6 +26,10 @@
     +lg
       flex-grow: 1
       text-align: right
+    +r(374)
+      text-align: center
+      a
+        display: block
   &__nav
     flex-grow: 1
     padding-left: 15px
@@ -33,11 +37,11 @@
     +lg
       position: absolute
       z-index: 2
-      background-color: $blue
+      background-color: #4b4b4b
       left: 0
       right: 0
       top: 100%
-      text-align: center
+      padding-top: 10px
       transform: translate(0, calc(-100% - #{$header-height}))
       +tr(transform .3s)
       &.is-active
