@@ -152,13 +152,21 @@
     +sm
       padding-top: $header-height-sm
     #{$this}__title
+      // width: 100%
       +sm
         padding-left: 0
         width: 100%
     #{$this}__inner
-      max-width: 1790px
-      margin-left: auto
-      margin-right: auto
+      max-width: none
+      margin-left: 0
+      padding-left: 65px
+      padding-right: 55px
+      +lg
+        padding-left: 40px
+        padding-right: 40px
+      +sm
+        padding-left: 15px
+        padding-right: 15px
     #{$this}__page
       padding-top: $header-full-height - 150px
       +lg
