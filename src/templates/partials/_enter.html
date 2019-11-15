@@ -1,0 +1,42 @@
+<!-- begin enter-page -->
+<div class="enter-page">
+  <div class="enter-page__inner">
+    <div class="enter-page__logo">
+      <img class="js-lazy" alt="" src="" data-src="./img/logo.png"/>
+    </div>
+
+    <div class="enter-page__title">
+      <h2 class="h2">Программа лояльності SALESWITHMARIO</h2>
+    </div>
+
+    <div class="enter-page__form">
+      <!-- begin form -->
+      <div class="form">
+        <form>
+          <div class="form__label form__label-top text-center">Для доступу в систему введіть 4-значний код:</div>
+
+          <div class="form__field form__field-mb-lg">
+            <!-- begin code-input -->
+            <div class="input input--code">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+            </div>
+            <!-- end code-input -->
+          </div>
+
+          <div class="form__btn">
+            {{ mixins.btn(
+              title = 'УВІЙТИ',
+              mod = '',
+              href = false
+            ) }}
+          </div>
+        </form>
+      </div>
+      <!-- end form -->
+    </div>
+  </div>
+</div>
+<!-- end enter-page -->

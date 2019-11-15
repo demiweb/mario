@@ -28,7 +28,7 @@
   &--gray
     background-color: $gray-lightest
 
-.cabinet
+.cabinet  
   margin-top: -$header-height
   padding-top: $header-height
   margin-bottom: -$footer-height
@@ -42,18 +42,22 @@
     top: 0
     left: 0
     right: 0
-    height: 345px
+    height: $header-full-height
     border-bottom-left-radius: $radius
     border-bottom-right-radius: $radius
     background-color: $blue
     +lg
-      height: 300px
+      height: $header-full-height-lg
   +lg
     margin-top: -$header-height-lg
     padding-top: $header-height-lg
   +sm
     margin-top: -$header-height-sm
     padding-top: $header-height-sm
+  &__souvenirs
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
   &__inner
     position: relative
     z-index: 1
@@ -130,6 +134,39 @@
     max-width: none
   &__block-form
     max-width: 886px
+
+.cabinet
+  $this: &
+  &--page
+    background-color: $white
+    padding-top: $header-height + 50px
+    +before
+      +md
+        height: $header-full-height-md
+      +sm
+        height: $header-full-height-sm
+    +lg
+      padding-top: $header-height-lg + 50px
+    +md
+      padding-top: $header-height-lg
+    +sm
+      padding-top: $header-height-sm
+    #{$this}__title
+      +sm
+        padding-left: 0
+        width: 100%
+    #{$this}__inner
+      max-width: 1790px
+      margin-left: auto
+      margin-right: auto
+    #{$this}__page
+      padding-top: $header-full-height - 150px
+      +lg
+        padding-top: $header-full-height-lg - 150px
+      +md
+        padding-top: $header-full-height-md - 100px
+      +sm
+        padding-top: $header-full-height-sm - 70px
 
 .cabinet-block
   background-color: $white

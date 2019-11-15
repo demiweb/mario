@@ -17,6 +17,8 @@
   border-radius: 25px
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.13)
   background-color: $white
+  +flex(flex-start, normal, column)
+  height: 100%
   &__wrap
     width: 25%
     padding-left: 15px
@@ -43,6 +45,8 @@
     padding: 25px 15px
     border-bottom-left-radius: 25px
     border-bottom-right-radius: 25px
+    flex-grow: 1
+    +flex(flex-start, normal, column)
     +sm
       border-bottom-left-radius: $radius-sm
       border-bottom-right-radius: $radius-sm
@@ -58,5 +62,6 @@
       margin-bottom: 10px
   &__price
     margin-bottom: 15px
+    flex-grow: 1
     +sm
       margin-bottom: 10px

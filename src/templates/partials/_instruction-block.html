@@ -1,0 +1,20 @@
+<!-- begin instruction-block -->
+<div class="instruction-block{% if i.reverse %} instruction-block--reverse{% endif %}">
+  <div class="instruction-block__left">
+    <div
+      class="instruction-block__img js-lazy"
+      data-background-image="./img/instructions/{% if i.img %}{{ i.img }}{% else %}0{{ loop.index }}.jpg{% endif %}"
+    ></div>
+  </div>
+
+  <div class="instruction-block__right">
+    <div class="instruction-block__content">
+      <div class="instruction-block__title">
+        <h4 class="h4 h4--ttn">{{ i.title | safe }}</h4>
+      </div>
+
+      <div class="instruction-block__text text text--gray">{{ i.text | safe }}</div>
+    </div>
+  </div>
+</div>
+<!-- end instruction-block -->
