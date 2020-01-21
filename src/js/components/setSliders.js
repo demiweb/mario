@@ -76,6 +76,31 @@ export default function setSliders() {
             gutter: 30
           }
         }
+      },
+      items_two: {
+        container: slider,
+        onInit: setlazy,
+        items: 1,
+        mouseDrag: true,
+        prevButton: prev,
+        nextButton: next,
+        nav: false,
+        gutter: 10,
+        responsive: {
+          // 576: {
+          //   items: 2
+          // },
+          768: {
+            items: 2
+          },
+          992: {
+            // items: 4,
+            gutter: 30
+          },
+          1200: {
+            gutter: 40
+          }
+        }
       }
     };
 

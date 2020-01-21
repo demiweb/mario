@@ -13,8 +13,18 @@
     margin-bottom: 5px
   &__text
     margin-bottom: 15px
+  &__btn
+    width: 100%
 
   &--sm
     #{$this}__img
       padding-top: 40%
       min-height: 220px
+  &--hor
+    flex-direction: row
+    #{$this}__img
+      width: 50%
+      padding-top: 40%
+    #{$this}__content
+      width: 50%
+      justify-content: center
