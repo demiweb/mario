@@ -12,6 +12,10 @@
     width: 35px
     height: 35px
     border-radius: 50%
+    &--white
+      background-color: $white
+      color: inherit
+      box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.13)
   &__prev
     left: 0
     +before
@@ -48,3 +52,13 @@
         +flex
       .slide
         display: block
+  &--items-wide
+    &__wrap
+      padding-left: 75px
+      padding-right: 75px
+      +xl
+        padding-left: 45px
+        padding-right: 45px
+      +lg
+        padding-left: 0
+        padding-right: 0

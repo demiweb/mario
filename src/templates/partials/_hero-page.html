@@ -1,0 +1,18 @@
+<!-- begin hero -->
+<section class="hero{% if hero.mod %} {{ hero.mod }}{% endif %} js-lazy" data-background-image="img/{{ hero.bg }}">
+  <div class="hero__content">
+    <div class="hero__title">
+      <h1 class="h1">{{ hero.title | safe }}</h1>
+    </div>
+
+    {% if hero.btn %}
+    <div class="hero__btn">
+      {{ mixins.btn(
+        title = hero.btn.title,
+        mod = hero.btn.mod
+      ) }}
+    </div>
+    {% endif %}
+  </div>
+</section>
+<!-- end hero -->

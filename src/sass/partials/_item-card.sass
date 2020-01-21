@@ -1,0 +1,20 @@
+.item-card
+  $this: &
+  @extend .souvenir
+  &__img
+    @extend .souvenir__img
+    padding-top: 60%
+  &__content
+    @extend .souvenir__content
+
+  &__title
+    @extend .souvenir__title
+    +bold
+    margin-bottom: 5px
+  &__text
+    margin-bottom: 15px
+
+  &--sm
+    #{$this}__img
+      padding-top: 40%
+      min-height: 220px

@@ -16,6 +16,28 @@ export default function setSliders() {
       next = wrap.querySelector('.js-next');
     };
     const options = {
+      partners: {
+        container: slider,
+        onInit: setlazy,
+        items: 2,
+        mouseDrag: true,
+        controls: false,
+        nav: false,
+        responsive: {
+          576: {
+            items: 3
+          },
+          768: {
+            items: 4
+          },
+          992: {
+            items: 5
+          },
+          1200: {
+            items: 7
+          }
+        }
+      },
       sertificats: {
         container: slider,
         onInit: setlazy,
@@ -47,9 +69,10 @@ export default function setSliders() {
             items: 2
           },
           768: {
-            items: 4
+            items: 3
           },
           992: {
+            items: 4,
             gutter: 30
           }
         }

@@ -33,7 +33,23 @@
       right: 20%
       top: -70px
       z-index: 1
-
+  &__title
+    margin-bottom: 25px
+    +md
+      margin-bottom: 15px
 
   &--form
     margin-bottom: 50px
+  &--page
+    min-height: 60vh
+    padding-top: calc(#{$header-height} + 3%)
+    padding-bottom: calc(#{$header-height} - #{$header-height} + 3%)
+    +flex(center, normal, column)
+    // padding-top: 20%
+    // padding-bottom: 20%
+    // +lg
+    //   padding-top: 20%
+    //   padding-bottom: 20%
+    // +sm
+    //   padding-top: 20%
+    //   padding-bottom: 20%

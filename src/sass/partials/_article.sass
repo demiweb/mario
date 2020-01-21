@@ -1,0 +1,52 @@
+.article
+  +clr
+  text-align: justify
+  color: $gray
+  h1, h2, h3, h4, h5, h6
+    margin-bottom: .3em
+    text-align: left
+    color: $c-text
+  h2
+    @extend .h4
+  div
+    width: 100%
+  p, img, div, ul, ol, img
+    &:not(:last-child)
+      margin-bottom: 40px
+      +lg
+        margin-bottom: 30px
+      +md
+        margin-bottom: 15px
+  img
+    +lg
+      width: 100%
+    &.alignleft
+      float: left
+      margin-right: 45px
+      +xl
+        margin-right: 30px
+      +lg
+        margin-right: 0
+        float: none
+    &.alignright
+      float: right
+      margin-left: 45px
+      +xl
+        margin-left: 30px
+      +lg
+        margin-left: 0
+        float: none
+  ul
+    li
+      +list-bullet
+      &::before
+        margin-right: .5em
+
+
+  ol
+    +counter('text', ')')
+    li
+      &::before
+        margin-right: .5em
+        display: inline-block
+

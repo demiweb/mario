@@ -1,0 +1,24 @@
+---
+title: one-article
+page: one-article
+hero: {
+  title: 'Технологічна виставка <br>
+у Палаці України',
+  bg: 'bg-hero-article.jpg',
+  mod: 'hero--page',
+  btn: {
+    title: 'залишити заявку'
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero-page.html" %}
+  {% include "partials/_s-one-article.html" %}
+  {% include "partials/_s-news-slider.html" %}
+  {% include "partials/_footer.html" %}
+{% endblock %}
+
+

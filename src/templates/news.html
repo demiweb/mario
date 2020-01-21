@@ -1,0 +1,21 @@
+---
+title: news
+page: news
+hero: {
+  title: Новини,
+  bg: 'bg-hero-news.jpg',
+  mod: 'hero--page'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero-page.html" %}
+  {% include "partials/_s-news.html" %}
+  {% include "partials/_footer.html" %}
+
+
+{% endblock %}
+
+

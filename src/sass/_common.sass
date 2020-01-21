@@ -29,6 +29,16 @@ button
 .overflow-hidden
   overflow: hidden
 
+.flex
+  display: block
+  &--align-items-center
+    align-items: center
+  &--flex-wrap
+    flex-wrap: wrap
+  &--lg
+    +lgmin
+      display: flex
+
 .text-center
   text-align: center !important
 
@@ -38,18 +48,18 @@ button
   padding-left: 15px
   padding-right: 15px
   max-width: 1360px
-
-.section-title
-  margin-bottom: 50px
-  text-align: center
-  +lg
-    margin-bottom: 30px
-  +md
-    margin-bottom: 20px
-  +sm
-    margin-bottom: 15px
-  +xs
-    margin-bottom: 10px
+  &--lg
+    max-width: 1510px
+  &--xl
+    max-width: none
+    padding-left: 65px
+    padding-right: 65px
+    +lg
+      padding-left: 40px
+      padding-right: 40px
+    +sm
+      padding-left: 15px
+      padding-right: 15px
 
 .logo
   display: block

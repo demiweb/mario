@@ -1,0 +1,34 @@
+<!-- begin section -->
+<section class="section">
+  <div class="container container--xl">
+    <div class="grid">
+      {% for i in range(0, 6) %}
+      <div class="col col--md-4 col--sm-6">
+        <!-- begin item-card -->
+        <div class="item-card item-card--sm">
+          <div class="item-card__img js-lazy" data-background-image="./img/3.jpg"></div>
+
+          <div class="item-card__content">
+            <div class="item-card__title">Технологічна виставка 
+            у Палаці України</div>
+
+            <div class="item-card__text text--gray">15 жовтня у Палаці України пройде виставка, присвячена розробці технологій для побутових потреб населення. Виставка організована
+при підтримці виготовників Mario. У виставці беруть участь такі....</div>
+
+            <div class="item-card__btn">
+              {{ mixins.btn(
+                title = 'читати',
+                mod = ''
+                ) }}
+              </div>
+            </div>
+          </div>
+        <!-- end item-card -->
+      </div>
+      {% endfor %}
+    </div>
+
+    {% include "partials/_pagination.html" %}
+  </div>
+</section>
+<!-- end section -->

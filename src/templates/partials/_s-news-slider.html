@@ -1,0 +1,39 @@
+<!-- begin section -->
+<section class="section section--color section--lg">
+  <div class="container container--lg">
+    <h4 class="section__title section-title h4 h4--ttu h4--gray-dark">останні новини від Mario:</h4>
+
+    <div class="slider__wrap slider--items__wrap slider--items-wide__wrap">
+      <div class="slider js-slider slider--items slider--items-wide" data-slider="items">
+        {% for i in range(0, 10) %}
+        <div class="slide">
+          <div class="item-card">
+            <div class="item-card__img js-lazy" data-background-image="./img/news-card.jpg"></div>
+
+            <div class="item-card__content">
+              <div class="item-card__title">Технологічна виставка 
+  у Палаці України</div>
+
+              <div class="item-card__text text--gray">15 жовтня у Палаці України пройде
+  виставка, присвячена розробці
+  технологій для побутових потреб...</div>
+
+              <div class="item-card__btn">
+                {{ mixins.btn(
+                  title = 'читати',
+                  mod = 'btn--full'
+                ) }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <button class="slider__prev slider__prev--white js-prev"></button>
+      <button class="slider__next slider__next--white js-next"></button>
+    </div>
+  </div>
+</section>
+<!-- end section -->
+

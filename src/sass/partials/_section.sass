@@ -1,0 +1,39 @@
+.section
+  padding-top: 50px
+  padding-bottom: 50px
+  +md
+    padding-top: 30px
+    padding-bottom: 30px
+  &__title
+    margin-bottom: 50px
+    text-align: center
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 20px
+    +sm
+      margin-bottom: 15px
+    +xs
+      margin-bottom: 10px
+
+  &--color
+    background-color: #eaeaf6
+  &--lg
+    padding-top: 115px
+    padding-bottom: 115px
+    +xl
+      padding-top: 100px
+      padding-bottom: 100px
+    +lg
+      padding-top: 80px
+      padding-bottom: 80px
+    +md
+      padding-top: 50px
+      padding-bottom: 50px
+    +sm
+      padding-top: 30px
+      padding-bottom: 30px
+
+.section-title
+  @extend .section__title
+   

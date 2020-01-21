@@ -1,16 +1,21 @@
 ---
 title: home
-bodyClass: 'no-scroll'
+bodyClass: ''
+enterPage: false
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
   {% include "partials/_header.html" %}
   {% include "partials/_hero.html" %}
-  {# {% include "partials/_partners.html" %} #}
+  {% include "partials/_partners.html" %}
   {% include "partials/_descr.html" %}
+  {% include "partials/_s-news-slider.html" %}
   {% include "partials/_footer.html" %}
-  {% include "partials/_enter.html" %}
+
+  {% if enterPage %}
+    {% include "partials/_enter.html" %}
+  {% endif %}
 {% endblock %}
 
 

@@ -8,3 +8,5 @@ PageList:
 - file: change.html
 - file: popup-thanks.html
 - file: instructions.html
+- file: news.html
+- file: one-article.html
